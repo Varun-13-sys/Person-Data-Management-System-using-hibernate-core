@@ -1,0 +1,39 @@
+🛠️ Steps to Run in Eclipse on Another System
+1. Clone or Copy the Project
+Transfer the project folder (including src, pom.xml, hibernate.cfg.xml) to the new machine.
+
+2. Open Eclipse
+Go to File > Import > Existing Maven Projects
+
+Select the root directory where the project resides
+
+Finish the import
+
+3. Ensure MySQL is Running
+Make sure MySQL service is running and credentials in hibernate.cfg.xml are valid.
+
+4. Configure hibernate.cfg.xml
+Set your system's MySQL credentials and port if different.
+
+xml
+Copy
+Edit
+<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernate_PMS?createDatabaseIfNotExist=true</property>
+<property name="hibernate.connection.username">your_username</property>
+<property name="hibernate.connection.password">your_password</property>
+5. Update Maven Dependencies
+Right-click on the project > Maven > Update Project
+
+6. Run the App
+Go to src/main/java/com/dcl/corehibernate/PMS/App.java
+
+Right-click > Run As > Java Application
+
+🔒 Security Note
+Do not commit sensitive information like passwords to version control. Use environment variables or config files for production use.
+
+👨‍💻 Author
+Varun A
+Information Science & Engineering Student
+Project: Person Data Management System using Hibernate
+
